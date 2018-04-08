@@ -6,3 +6,6 @@ def home(request):
 
 def categories(request):
     return render(request,'Kiraya/categories.html',{})
+
+def offers(request):
+    return render(request,'Kiraya/offers.html',{})

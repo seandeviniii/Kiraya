@@ -2,8 +2,9 @@
 {% load staticfiles %}
   <html>
     <head>
-      <title>{% block title %}Kiraya|Homepage{% endblock %}</title>
+      <title>{% block title %}Kiraya{% endblock %}</title>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"></link>
+      {% block stylesheet %}{% endblock %}
       <link rel="stylesheet" type="text/css" href={% static 'css/main.css' %}></link>
     </head>
     <body style="background-color:#D6C7A7">
@@ -15,18 +16,18 @@
       <button class="custom-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
         <span class="custom-toggler navbar-toggler-icon"></span>
       </button>
-      <a class="navbar-brand" href="#">Navbar</a>
+      <a class="navbar-brand" href="home/">Navbar</a>
 
       <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-          <li class="nav-item active">
-            <a class="nav-link" href="categories">Home <span class="sr-only">(current)</span></a>
+          {% block navStat %}<li class="nav-item active">{% endblock %}
+            <a class="nav-link" href="categories">Categories</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+          {% block navStat1 %}<li class="nav-item">{% endblock %}
+            <a class="nav-link" href="offers">Offers</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled</a>
+          {% block navStat2 %}<li class="nav-item">{% endblock %}
+            <a class="nav-link" href="#">Log In</a>
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
@@ -49,9 +50,9 @@
       <h1>Some text to enable scrolling</h1>
       <h1>Some text to enable scrolling</h1>
     </div>
+    {% endblock %}
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    {% endblock %}
   </body>
 </html>
